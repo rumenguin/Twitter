@@ -14,7 +14,7 @@ protocol TweetTableViewCellDelegate: AnyObject {
     func tweetTableViewCellDidTapShare()
 }
 
-class TweetTableViewCell: UITableViewCell {
+final class TweetTableViewCell: UITableViewCell {
 
     static let identifier = "TweetTableViewCell"
     

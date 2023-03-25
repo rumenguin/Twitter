@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     private func configureNavigationBar() {
         let size: CGFloat = 36
