@@ -9,6 +9,27 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private func configureNavigationBar() {
+        let size: CGFloat = 36
+        let logoImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        logoImageView.contentMode = .scaleAspectFill
+        logoImageView.image = UIImage(named: "twitterLogo")
+        
+        //Twitter Logo in midddle of nav bar
+        let middleView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        middleView.addSubview(logoImageView)
+        navigationItem.titleView = middleView
+        
+        //Profile logo in left of nav bar
+        let profileImage = UIImage(systemName: "person")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: profileImage, style: .plain, target: self, action: #selector(didTapProfile))
+    }
+    
+    @objc private func didTapProfile() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private let timelineTableView: UITableView = {
         
         let tableView = UITableView()
@@ -22,6 +43,7 @@ class HomeViewController: UIViewController {
         view.addSubview(timelineTableView)
         timelineTableView.delegate = self
         timelineTableView.dataSource = self
+        configureNavigationBar()
 
     }
     
