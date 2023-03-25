@@ -16,6 +16,7 @@
 		35066E1629CEBD2000280A58 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35066E1529CEBD2000280A58 /* SearchViewController.swift */; };
 		35066E1829CEBD2C00280A58 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35066E1729CEBD2C00280A58 /* NotificationsViewController.swift */; };
 		35066E1A29CEBD4500280A58 /* DirectMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35066E1929CEBD4500280A58 /* DirectMessagesViewController.swift */; };
+		35066E1D29CED1B300280A58 /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35066E1C29CED1B300280A58 /* TweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		35066E1529CEBD2000280A58 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		35066E1729CEBD2C00280A58 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		35066E1929CEBD4500280A58 /* DirectMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessagesViewController.swift; sourceTree = "<group>"; };
+		35066E1C29CED1B300280A58 /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		35066DFC29CEBA3700280A58 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				35066E1B29CED19C00280A58 /* Views */,
 				35066E1129CEBCA700280A58 /* Controllers */,
 				35066DFD29CEBA3700280A58 /* AppDelegate.swift */,
 				35066DFF29CEBA3700280A58 /* SceneDelegate.swift */,
@@ -90,6 +93,14 @@
 				35066E1929CEBD4500280A58 /* DirectMessagesViewController.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		35066E1B29CED19C00280A58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				35066E1C29CED1B300280A58 /* TweetTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 				35066E0029CEBA3700280A58 /* SceneDelegate.swift in Sources */,
 				35066E1429CEBCD300280A58 /* HomeViewController.swift in Sources */,
 				35066E1A29CEBD4500280A58 /* DirectMessagesViewController.swift in Sources */,
+				35066E1D29CED1B300280A58 /* TweetTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
