@@ -29,9 +29,31 @@ final class ProfileTableViewHeader: UIView {
         }
     }
     
+    private var leadingAnchors: [NSLayoutConstraint] = []
+    private var trailingAnchors: [NSLayoutConstraint] = []
+    
+    private let indicator: UIView = {
+       
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        return view
+        
+    }()
+    
     private var selectedtabs: Int = 0 {
         didSet {
-            print(selectedtabs)
+            for i in 0..<tabs.count {
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut) { [weak self] in
+                    self?.sectionStack.arrangedSubviews[i].tintColor = i == self?.selectedtabs ? .label : .secondaryLabel
+                    self?.leadingAnchors[i].isActive = i == self?.selectedtabs ? true : false
+                    
+                    self?.trailingAnchors[i].isActive = i == self?.selectedtabs ? true : false
+                    self?.layoutIfNeeded() //trigger animation for indicator
+                }completion: { _ in
+                    
+                }
+            }
         }
     }
     
@@ -194,14 +216,22 @@ final class ProfileTableViewHeader: UIView {
         addSubview(followersCountLabel)
         addSubview(followersTextLabel)
         addSubview(sectionStack)
+        addSubview(indicator)
         configureConstraints()
         configureStackButton()
     }
     
     private func configureStackButton() {
         //looping through all the tabs
-        for (_, button) in sectionStack.arrangedSubviews.enumerated() {
+        for (i, button) in sectionStack.arrangedSubviews.enumerated() {
             guard let button = button as? UIButton else { return }
+            
+            if i == selectedtabs {
+                button.tintColor = .label
+            }else {
+                button.tintColor = .secondaryLabel
+            }
+            
             button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
         }
     }
@@ -227,6 +257,14 @@ final class ProfileTableViewHeader: UIView {
     }
     
     private func configureConstraints() {
+        
+        for i in 0..<tabs.count {
+            let leadingAnchor = indicator.leadingAnchor.constraint(equalTo: sectionStack.arrangedSubviews[i].leadingAnchor)
+            leadingAnchors.append(leadingAnchor)
+            
+            let trailingAnchor = indicator.trailingAnchor.constraint(equalTo: sectionStack.arrangedSubviews[i].trailingAnchor)
+            trailingAnchors.append(trailingAnchor)
+        }
         
         let profileHeaderImageViewConstraints = [
         
@@ -317,6 +355,15 @@ final class ProfileTableViewHeader: UIView {
             
         ]
         
+        let indicatorConstraints = [
+        
+            leadingAnchors[0],
+            trailingAnchors[0],
+            indicator.topAnchor.constraint(equalTo: sectionStack.arrangedSubviews[0].bottomAnchor),
+            indicator.heightAnchor.constraint(equalToConstant: 4)
+                
+        ]
+        
         NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
         NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
@@ -329,6 +376,7 @@ final class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(followersCountLabelConstraints)
         NSLayoutConstraint.activate(followersTextLabelConstraints)
         NSLayoutConstraint.activate(sectionStackConstraints)
+        NSLayoutConstraint.activate(indicatorConstraints)
     }
 
 }
