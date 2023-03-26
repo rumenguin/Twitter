@@ -51,6 +51,12 @@ final class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         timelineTableView.frame = view.frame
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //as we hide the nav bar for profile we have to unhide the nav bar for this view
+        navigationController?.navigationBar.isHidden = false
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
