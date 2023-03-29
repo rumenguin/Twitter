@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class HomeViewController: UIViewController {
     
@@ -56,6 +57,12 @@ final class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         //as we hide the nav bar for profile we have to unhide the nav bar for this view
         navigationController?.navigationBar.isHidden = false
+        if Auth.auth().currentUser == nil {
+            //if we are not sign in
+            let vc = UINavigationController(rootViewController: OnboardingViewController())
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: false)
+        }
     }
 }
 
