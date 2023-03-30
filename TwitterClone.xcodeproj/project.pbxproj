@@ -20,6 +20,7 @@
 		350DE98E29CF2D8C008CA238 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DE98D29CF2D8C008CA238 /* ProfileViewController.swift */; };
 		350DE99029CF3D17008CA238 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DE98F29CF3D17008CA238 /* ProfileTableViewHeader.swift */; };
 		3530E06F29D54F5900F7E30A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3530E06E29D54F5900F7E30A /* AuthManager.swift */; };
+		3530E07129D563AF00F7E30A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3530E07029D563AF00F7E30A /* LoginViewController.swift */; };
 		359D440B29D4679F00D0ECA3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359D440A29D4679F00D0ECA3 /* GoogleService-Info.plist */; };
 		359D440E29D468BB00D0ECA3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 359D440D29D468BB00D0ECA3 /* FirebaseAuth */; };
 		359D441029D468BB00D0ECA3 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 359D440F29D468BB00D0ECA3 /* FirebaseAuthCombine-Community */; };
@@ -32,7 +33,7 @@
 		359D441E29D468BB00D0ECA3 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 359D441D29D468BB00D0ECA3 /* FirebaseStorageCombine-Community */; };
 		359D442129D4762400D0ECA3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442029D4762400D0ECA3 /* OnboardingViewController.swift */; };
 		359D442329D4860B00D0ECA3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442229D4860B00D0ECA3 /* RegisterViewController.swift */; };
-		359D442629D4A67600D0ECA3 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442529D4A67600D0ECA3 /* RegisterViewViewModel.swift */; };
+		359D442629D4A67600D0ECA3 /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442529D4A67600D0ECA3 /* AuthenticationViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,10 +52,11 @@
 		350DE98D29CF2D8C008CA238 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		350DE98F29CF3D17008CA238 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		3530E06E29D54F5900F7E30A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		3530E07029D563AF00F7E30A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		359D440A29D4679F00D0ECA3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		359D442029D4762400D0ECA3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		359D442229D4860B00D0ECA3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		359D442529D4A67600D0ECA3 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
+		359D442529D4A67600D0ECA3 /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				359D442029D4762400D0ECA3 /* OnboardingViewController.swift */,
 				359D442229D4860B00D0ECA3 /* RegisterViewController.swift */,
+				3530E07029D563AF00F7E30A /* LoginViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -169,7 +172,7 @@
 		359D442429D4A66500D0ECA3 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				359D442529D4A67600D0ECA3 /* RegisterViewViewModel.swift */,
+				359D442529D4A67600D0ECA3 /* AuthenticationViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -262,12 +265,13 @@
 				35066E1629CEBD2000280A58 /* SearchViewController.swift in Sources */,
 				3530E06F29D54F5900F7E30A /* AuthManager.swift in Sources */,
 				35066E0229CEBA3700280A58 /* MainTabbarViewController.swift in Sources */,
+				3530E07129D563AF00F7E30A /* LoginViewController.swift in Sources */,
 				35066DFE29CEBA3700280A58 /* AppDelegate.swift in Sources */,
 				359D442329D4860B00D0ECA3 /* RegisterViewController.swift in Sources */,
 				35066E1829CEBD2C00280A58 /* NotificationsViewController.swift in Sources */,
 				35066E0029CEBA3700280A58 /* SceneDelegate.swift in Sources */,
 				35066E1429CEBCD300280A58 /* HomeViewController.swift in Sources */,
-				359D442629D4A67600D0ECA3 /* RegisterViewViewModel.swift in Sources */,
+				359D442629D4A67600D0ECA3 /* AuthenticationViewViewModel.swift in Sources */,
 				350DE98E29CF2D8C008CA238 /* ProfileViewController.swift in Sources */,
 				35066E1A29CEBD4500280A58 /* DirectMessagesViewController.swift in Sources */,
 				350DE99029CF3D17008CA238 /* ProfileTableViewHeader.swift in Sources */,
