@@ -7,8 +7,12 @@
 
 import UIKit
 import FirebaseAuth
+import Combine
 
 final class HomeViewController: UIViewController {
+    
+    private var viewModel = HomeViewViewModel()
+    private var subcriptions: Set<AnyCancellable> = []
     
     private func configureNavigationBar() {
         let size: CGFloat = 36
@@ -39,6 +43,7 @@ final class HomeViewController: UIViewController {
         
     }()
 
+    //Notifies the view controller that its view was added to a view hierarchy.
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(timelineTableView)
@@ -46,6 +51,7 @@ final class HomeViewController: UIViewController {
         timelineTableView.dataSource = self
         configureNavigationBar()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(didTapSignOut))
+        bindViews()
 
     }
     
@@ -68,11 +74,29 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    //Notifies the view controller that its view is about to be added to a view hierarchy.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //as we hide the nav bar for profile we have to unhide the nav bar for this view
         navigationController?.navigationBar.isHidden = false
         handleAuthentication()
+        viewModel.retrieveUser()
+    }
+    
+    func completeUserOnboarding() {
+        let vc = ProfileDataFormViewController()
+        present(vc, animated: true)
+    }
+    
+    
+    func bindViews() {
+        viewModel.$user.sink { [weak self] user in
+            guard let user = user else { return }
+            if !user.isUserOnboarded {
+                self?.completeUserOnboarding()
+            }
+        }
+        .store(in: &subcriptions)
     }
 }
 
