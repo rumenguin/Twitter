@@ -39,6 +39,7 @@
 		359D442129D4762400D0ECA3 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442029D4762400D0ECA3 /* OnboardingViewController.swift */; };
 		359D442329D4860B00D0ECA3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442229D4860B00D0ECA3 /* RegisterViewController.swift */; };
 		359D442629D4A67600D0ECA3 /* AuthenticationViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359D442529D4A67600D0ECA3 /* AuthenticationViewViewModel.swift */; };
+		35C7D3D029D6AB05000893DD /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7D3CF29D6AB05000893DD /* StorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		359D442029D4762400D0ECA3 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		359D442229D4860B00D0ECA3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		359D442529D4A67600D0ECA3 /* AuthenticationViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewViewModel.swift; sourceTree = "<group>"; };
+		35C7D3CF29D6AB05000893DD /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				3530E06E29D54F5900F7E30A /* AuthManager.swift */,
 				35648AD829D5D4FF00D786B8 /* DatabaseManager.swift */,
+				35C7D3CF29D6AB05000893DD /* StorageManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				35066E1629CEBD2000280A58 /* SearchViewController.swift in Sources */,
 				3530E06F29D54F5900F7E30A /* AuthManager.swift in Sources */,
 				35066E0229CEBA3700280A58 /* MainTabbarViewController.swift in Sources */,
+				35C7D3D029D6AB05000893DD /* StorageManager.swift in Sources */,
 				3530E07129D563AF00F7E30A /* LoginViewController.swift in Sources */,
 				35648AD929D5D4FF00D786B8 /* DatabaseManager.swift in Sources */,
 				35066DFE29CEBA3700280A58 /* AppDelegate.swift in Sources */,
