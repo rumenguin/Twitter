@@ -36,7 +36,7 @@ final class ProfileTableViewHeader: UIView {
        
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        view.backgroundColor = .twitterBlueColor
         return view
         
     }()
@@ -124,7 +124,6 @@ final class ProfileTableViewHeader: UIView {
        
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Joined June 2024"
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .regular)
         return label

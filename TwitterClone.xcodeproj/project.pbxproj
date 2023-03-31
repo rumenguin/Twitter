@@ -21,6 +21,10 @@
 		350DE99029CF3D17008CA238 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350DE98F29CF3D17008CA238 /* ProfileTableViewHeader.swift */; };
 		3530E06F29D54F5900F7E30A /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3530E06E29D54F5900F7E30A /* AuthManager.swift */; };
 		3530E07129D563AF00F7E30A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3530E07029D563AF00F7E30A /* LoginViewController.swift */; };
+		35318A7D29D7200B005669B3 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35318A7C29D7200B005669B3 /* Extension+UIColor.swift */; };
+		35318A7F29D72C80005669B3 /* TweetComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35318A7E29D72C80005669B3 /* TweetComposeViewController.swift */; };
+		35318A8129D736E0005669B3 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35318A8029D736E0005669B3 /* Tweet.swift */; };
+		35318A8329D737A5005669B3 /* TweetComposeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35318A8229D737A5005669B3 /* TweetComposeViewViewModel.swift */; };
 		35648AD729D5D3D900D786B8 /* TwitterUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35648AD629D5D3D900D786B8 /* TwitterUser.swift */; };
 		35648AD929D5D4FF00D786B8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35648AD829D5D4FF00D786B8 /* DatabaseManager.swift */; };
 		35648ADB29D5DFA500D786B8 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35648ADA29D5DFA500D786B8 /* HomeViewViewModel.swift */; };
@@ -61,6 +65,10 @@
 		350DE98F29CF3D17008CA238 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		3530E06E29D54F5900F7E30A /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		3530E07029D563AF00F7E30A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		35318A7C29D7200B005669B3 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		35318A7E29D72C80005669B3 /* TweetComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComposeViewController.swift; sourceTree = "<group>"; };
+		35318A8029D736E0005669B3 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		35318A8229D737A5005669B3 /* TweetComposeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComposeViewViewModel.swift; sourceTree = "<group>"; };
 		35648AD629D5D3D900D786B8 /* TwitterUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterUser.swift; sourceTree = "<group>"; };
 		35648AD829D5D4FF00D786B8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		35648ADA29D5DFA500D786B8 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +122,7 @@
 		35066DFC29CEBA3700280A58 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				35318A7A29D71FE4005669B3 /* Utils */,
 				35648AD529D5D39F00D786B8 /* Models */,
 				3530E06D29D54F4000F7E30A /* Networking */,
 				359D442429D4A66500D0ECA3 /* ViewModels */,
@@ -165,6 +174,7 @@
 			children = (
 				350DE98D29CF2D8C008CA238 /* ProfileViewController.swift */,
 				35648ADC29D5E5E200D786B8 /* ProfileDataFormViewController.swift */,
+				35318A7E29D72C80005669B3 /* TweetComposeViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -179,10 +189,27 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		35318A7A29D71FE4005669B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				35318A7B29D71FF5005669B3 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		35318A7B29D71FF5005669B3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				35318A7C29D7200B005669B3 /* Extension+UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		35648AD529D5D39F00D786B8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				35648AD629D5D3D900D786B8 /* TwitterUser.swift */,
+				35318A8029D736E0005669B3 /* Tweet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,6 +231,7 @@
 				35648ADA29D5DFA500D786B8 /* HomeViewViewModel.swift */,
 				35648ADE29D5E74A00D786B8 /* ProfileDataFormViewViewModel.swift */,
 				35C7D3D129D6C623000893DD /* ProfileViewViewModel.swift */,
+				35318A8229D737A5005669B3 /* TweetComposeViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -297,6 +325,7 @@
 			files = (
 				35066E1629CEBD2000280A58 /* SearchViewController.swift in Sources */,
 				3530E06F29D54F5900F7E30A /* AuthManager.swift in Sources */,
+				35318A7F29D72C80005669B3 /* TweetComposeViewController.swift in Sources */,
 				35066E0229CEBA3700280A58 /* MainTabbarViewController.swift in Sources */,
 				35C7D3D029D6AB05000893DD /* StorageManager.swift in Sources */,
 				3530E07129D563AF00F7E30A /* LoginViewController.swift in Sources */,
@@ -305,10 +334,13 @@
 				35C7D3D229D6C623000893DD /* ProfileViewViewModel.swift in Sources */,
 				359D442329D4860B00D0ECA3 /* RegisterViewController.swift in Sources */,
 				35066E1829CEBD2C00280A58 /* NotificationsViewController.swift in Sources */,
+				35318A8129D736E0005669B3 /* Tweet.swift in Sources */,
 				35066E0029CEBA3700280A58 /* SceneDelegate.swift in Sources */,
 				35066E1429CEBCD300280A58 /* HomeViewController.swift in Sources */,
+				35318A8329D737A5005669B3 /* TweetComposeViewViewModel.swift in Sources */,
 				359D442629D4A67600D0ECA3 /* AuthenticationViewViewModel.swift in Sources */,
 				35648ADF29D5E74A00D786B8 /* ProfileDataFormViewViewModel.swift in Sources */,
+				35318A7D29D7200B005669B3 /* Extension+UIColor.swift in Sources */,
 				350DE98E29CF2D8C008CA238 /* ProfileViewController.swift in Sources */,
 				35066E1A29CEBD4500280A58 /* DirectMessagesViewController.swift in Sources */,
 				350DE99029CF3D17008CA238 /* ProfileTableViewHeader.swift in Sources */,
